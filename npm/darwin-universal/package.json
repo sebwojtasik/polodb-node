@@ -1,0 +1,23 @@
+{
+  "name": "@sebwojtasik/polodb-darwin-universal",
+  "version": "0.0.1",
+  "os": [
+    "darwin"
+  ],
+  "main": "polodb.darwin-universal.node",
+  "files": [
+    "polodb.darwin-universal.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "url": "https://github.com/sebwojtasik/polodb-node",
+    "type": "git"
+  }
+}

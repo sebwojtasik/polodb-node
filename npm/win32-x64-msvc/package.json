@@ -1,0 +1,27 @@
+{
+  "name": "@sebwojtasik/polodb-win32-x64-msvc",
+  "version": "0.0.1",
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "polodb.win32-x64-msvc.node",
+  "files": [
+    "polodb.win32-x64-msvc.node"
+  ],
+  "description": "Node bindings for embedded PoloDB",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "url": "https://github.com/sebwojtasik/polodb-node",
+    "type": "git"
+  }
+}

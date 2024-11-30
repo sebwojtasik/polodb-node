@@ -1,0 +1,25 @@
+[package]
+authors = ["LongYinan <lynweklm@gmail.com>"]
+edition = "2021"
+name = "polodb"
+version = "0.0.1"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+bson = "2"
+hex = "0.4.3"
+napi = {version = "2", features = ["napi5", "tokio_rt"]}
+napi-derive = "2"
+polodb_core = "5.1.3"
+tokio = "1.41.1"
+
+[build-dependencies]
+napi-build = "2"
+
+[profile.release]
+lto = true
+codegen-units = 1

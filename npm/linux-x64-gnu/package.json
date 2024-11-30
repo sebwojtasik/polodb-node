@@ -1,0 +1,30 @@
+{
+  "name": "@sebwojtasik/polodb-linux-x64-gnu",
+  "version": "0.0.1",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "polodb.linux-x64-gnu.node",
+  "files": [
+    "polodb.linux-x64-gnu.node"
+  ],
+  "description": "Node bindings for embedded PoloDB",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "url": "https://github.com/sebwojtasik/polodb-node",
+    "type": "git"
+  },
+  "libc": [
+    "glibc"
+  ]
+}

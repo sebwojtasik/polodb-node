@@ -1,0 +1,128 @@
+{
+  "name": "@sebwojtasik/polodb",
+  "version": "0.0.1",
+  "description": "Node bindings for embedded PoloDB",
+  "types": "index.d.ts",
+  "repository": {
+    "url": "https://github.com/sebwojtasik/polodb-node",
+    "type": "git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "napi-rs",
+    "NAPI",
+    "N-API",
+    "Rust",
+    "node-addon",
+    "node-addon-api"
+  ],
+  "exports": {
+    ".": "./index.js"
+  },
+  "napi": {
+    "name": "polodb",
+    "features": {
+      "napi5": true
+    },
+    "binaryName": "polodb",
+    "targets": [
+      "x86_64-apple-darwin",
+      "x86_64-pc-windows-msvc",
+      "x86_64-unknown-linux-gnu",
+      "universal-apple-darwin"
+    ],
+    "triples": {
+      "additional": [
+        "universal-apple-darwin"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "bench": "node --import @swc-node/register/esm-register benchmark/bench.ts",
+    "build:debug": "napi build --platform --js binding.js --dts binding.d.ts && build:ts",
+    "build:ts": "tsup",
+    "build:napi": "napi build --platform --release --js binding.js --dts binding.d.ts",
+    "build": "pnpm build:napi && pnpm build:ts",
+    "format:prettier": "prettier . -w",
+    "format:rs": "cargo fmt",
+    "format:toml": "taplo format",
+    "format": "run-p format:prettier format:rs format:toml",
+    "lint": "oxlint",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "universal": "napi universal",
+    "version": "napi version"
+  },
+  "devDependencies": {
+    "@emnapi/core": "^1.3.1",
+    "@emnapi/runtime": "^1.3.1",
+    "@faker-js/faker": "^9.2.0",
+    "@napi-rs/cli": "2.18.4",
+    "@napi-rs/wasm-runtime": "^0.2.5",
+    "@swc-node/register": "^1.10.9",
+    "@swc/core": "^1.9.3",
+    "@taplo/cli": "^0.7.0",
+    "@tybys/wasm-util": "^0.9.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.9.3",
+    "chalk": "^5.3.0",
+    "emnapi": "^1.3.1",
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.10",
+    "npm-run-all2": "^7.0.1",
+    "oxlint": "^0.12.0",
+    "prettier": "^3.3.3",
+    "tinybench": "^3.0.6",
+    "ts-jest": "^29.2.5",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "lint-staged": {
+    "*.@(js|ts|tsx)": [
+      "oxlint --fix"
+    ],
+    "*.@(js|ts|tsx|yml|yaml|md|json)": [
+      "prettier --write"
+    ],
+    "*.toml": [
+      "taplo format"
+    ]
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "timeout": "2m",
+    "workerThreads": false,
+    "environmentVariables": {
+      "TS_NODE_PROJECT": "./tsconfig.json"
+    },
+    "nodeArguments": [
+      "--import",
+      "@swc-node/register/esm-register"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "arrowParens": "always"
+  },
+  "packageManager": "pnpm@9.14.2",
+  "dependencies": {
+    "bson": "^6.10.0",
+    "ts-node": "^10.9.2"
+  }
+}
