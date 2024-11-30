@@ -1,0 +1,15 @@
+{
+  "name": "@sebwojtasik/polodb-darwin-universal",
+  "version": "0.0.1",
+  "os": [
+    "darwin"
+  ],
+  "main": "polodb.darwin-universal.node",
+  "files": [
+    "polodb.darwin-universal.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}

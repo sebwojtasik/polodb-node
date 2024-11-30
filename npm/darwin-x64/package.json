@@ -1,0 +1,27 @@
+{
+  "name": "@sebwojtasik/polodb-darwin-x64",
+  "version": "0.0.1",
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "polodb.darwin-x64.node",
+  "files": [
+    "polodb.darwin-x64.node"
+  ],
+  "description": "Node bindings for embedded PoloDB",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "url": "https://github.com/sebwojtasik/polodb-node",
+    "type": "git"
+  }
+}
