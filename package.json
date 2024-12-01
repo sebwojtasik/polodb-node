@@ -1,6 +1,6 @@
 {
   "name": "@sebwojtasik/polodb",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node bindings for embedded PoloDB",
   "types": "index.d.ts",
   "repository": {
